@@ -4,7 +4,7 @@ Just a simple calculator program by a Chinese pupil.
 
 ## Usage
 
-You can call calculator.calculate() function to calculate the result of an expression.
+You can call ```calculator.calculate()``` function to calculate the result of an expression.
 
 For example:
 
@@ -31,3 +31,4 @@ I hope you like it!
 
 Apache 2.0.
 It's Pasted!
+
