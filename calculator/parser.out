@@ -1,0 +1,1002 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> NUMBER
+Rule 2     expression -> NUMBER DOT NUMBER
+Rule 3     expression -> expression PLUS expression
+Rule 4     expression -> expression MINUS expression
+Rule 5     expression -> expression TIMES expression
+Rule 6     expression -> expression DIVIDE expression
+Rule 7     expression -> expression POWER expression
+Rule 8     expression -> expression MODULO expression
+Rule 9     expression -> expression JUSTINTDIVIDE expression
+Rule 10    expression -> MINUS expression
+Rule 11    expression -> PLUS expression
+Rule 12    expression -> LPAREN expression RPAREN
+Rule 13    expression -> ROOT LPAREN expression RPAREN
+Rule 14    expression -> expression ROOT LPAREN expression RPAREN
+Rule 15    expression -> PI
+Rule 16    expression -> E
+Rule 17    expression -> TAU
+
+Terminals, with rules where they appear
+
+DIVIDE               : 6
+DOT                  : 2
+E                    : 16
+JUSTINTDIVIDE        : 9
+LPAREN               : 12 13 14
+MINUS                : 4 10
+MODULO               : 8
+NUMBER               : 1 2 2
+PI                   : 15
+PLUS                 : 3 11
+POWER                : 7
+ROOT                 : 13 14
+RPAREN               : 12 13 14
+TAU                  : 17
+TIMES                : 5
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 11 12 13 14 14 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 1
+
+state 1
+
+    (0) S' -> expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    TIMES           shift and go to state 12
+    DIVIDE          shift and go to state 13
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+    JUSTINTDIVIDE   shift and go to state 16
+    ROOT            shift and go to state 17
+
+
+state 2
+
+    (1) expression -> NUMBER .
+    (2) expression -> NUMBER . DOT NUMBER
+
+    PLUS            reduce using rule 1 (expression -> NUMBER .)
+    MINUS           reduce using rule 1 (expression -> NUMBER .)
+    TIMES           reduce using rule 1 (expression -> NUMBER .)
+    DIVIDE          reduce using rule 1 (expression -> NUMBER .)
+    POWER           reduce using rule 1 (expression -> NUMBER .)
+    MODULO          reduce using rule 1 (expression -> NUMBER .)
+    JUSTINTDIVIDE   reduce using rule 1 (expression -> NUMBER .)
+    ROOT            reduce using rule 1 (expression -> NUMBER .)
+    $end            reduce using rule 1 (expression -> NUMBER .)
+    RPAREN          reduce using rule 1 (expression -> NUMBER .)
+    DOT             shift and go to state 18
+
+
+state 3
+
+    (11) expression -> PLUS . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 19
+
+state 4
+
+    (10) expression -> MINUS . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 20
+
+state 5
+
+    (12) expression -> LPAREN . expression RPAREN
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 21
+
+state 6
+
+    (13) expression -> ROOT . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 22
+
+
+state 7
+
+    (15) expression -> PI .
+
+    PLUS            reduce using rule 15 (expression -> PI .)
+    MINUS           reduce using rule 15 (expression -> PI .)
+    TIMES           reduce using rule 15 (expression -> PI .)
+    DIVIDE          reduce using rule 15 (expression -> PI .)
+    POWER           reduce using rule 15 (expression -> PI .)
+    MODULO          reduce using rule 15 (expression -> PI .)
+    JUSTINTDIVIDE   reduce using rule 15 (expression -> PI .)
+    ROOT            reduce using rule 15 (expression -> PI .)
+    $end            reduce using rule 15 (expression -> PI .)
+    RPAREN          reduce using rule 15 (expression -> PI .)
+
+
+state 8
+
+    (16) expression -> E .
+
+    PLUS            reduce using rule 16 (expression -> E .)
+    MINUS           reduce using rule 16 (expression -> E .)
+    TIMES           reduce using rule 16 (expression -> E .)
+    DIVIDE          reduce using rule 16 (expression -> E .)
+    POWER           reduce using rule 16 (expression -> E .)
+    MODULO          reduce using rule 16 (expression -> E .)
+    JUSTINTDIVIDE   reduce using rule 16 (expression -> E .)
+    ROOT            reduce using rule 16 (expression -> E .)
+    $end            reduce using rule 16 (expression -> E .)
+    RPAREN          reduce using rule 16 (expression -> E .)
+
+
+state 9
+
+    (17) expression -> TAU .
+
+    PLUS            reduce using rule 17 (expression -> TAU .)
+    MINUS           reduce using rule 17 (expression -> TAU .)
+    TIMES           reduce using rule 17 (expression -> TAU .)
+    DIVIDE          reduce using rule 17 (expression -> TAU .)
+    POWER           reduce using rule 17 (expression -> TAU .)
+    MODULO          reduce using rule 17 (expression -> TAU .)
+    JUSTINTDIVIDE   reduce using rule 17 (expression -> TAU .)
+    ROOT            reduce using rule 17 (expression -> TAU .)
+    $end            reduce using rule 17 (expression -> TAU .)
+    RPAREN          reduce using rule 17 (expression -> TAU .)
+
+
+state 10
+
+    (3) expression -> expression PLUS . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 23
+
+state 11
+
+    (4) expression -> expression MINUS . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 24
+
+state 12
+
+    (5) expression -> expression TIMES . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 25
+
+state 13
+
+    (6) expression -> expression DIVIDE . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 26
+
+state 14
+
+    (7) expression -> expression POWER . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 27
+
+state 15
+
+    (8) expression -> expression MODULO . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 28
+
+state 16
+
+    (9) expression -> expression JUSTINTDIVIDE . expression
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 29
+
+state 17
+
+    (14) expression -> expression ROOT . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 30
+
+
+state 18
+
+    (2) expression -> NUMBER DOT . NUMBER
+
+    NUMBER          shift and go to state 31
+
+
+state 19
+
+    (11) expression -> PLUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    ROOT            reduce using rule 11 (expression -> PLUS expression .)
+    $end            reduce using rule 11 (expression -> PLUS expression .)
+    RPAREN          reduce using rule 11 (expression -> PLUS expression .)
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    TIMES           shift and go to state 12
+    DIVIDE          shift and go to state 13
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+    JUSTINTDIVIDE   shift and go to state 16
+
+  ! PLUS            [ reduce using rule 11 (expression -> PLUS expression .) ]
+  ! MINUS           [ reduce using rule 11 (expression -> PLUS expression .) ]
+  ! TIMES           [ reduce using rule 11 (expression -> PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 11 (expression -> PLUS expression .) ]
+  ! POWER           [ reduce using rule 11 (expression -> PLUS expression .) ]
+  ! MODULO          [ reduce using rule 11 (expression -> PLUS expression .) ]
+  ! JUSTINTDIVIDE   [ reduce using rule 11 (expression -> PLUS expression .) ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 20
+
+    (10) expression -> MINUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    ROOT            reduce using rule 10 (expression -> MINUS expression .)
+    $end            reduce using rule 10 (expression -> MINUS expression .)
+    RPAREN          reduce using rule 10 (expression -> MINUS expression .)
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    TIMES           shift and go to state 12
+    DIVIDE          shift and go to state 13
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+    JUSTINTDIVIDE   shift and go to state 16
+
+  ! PLUS            [ reduce using rule 10 (expression -> MINUS expression .) ]
+  ! MINUS           [ reduce using rule 10 (expression -> MINUS expression .) ]
+  ! TIMES           [ reduce using rule 10 (expression -> MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 10 (expression -> MINUS expression .) ]
+  ! POWER           [ reduce using rule 10 (expression -> MINUS expression .) ]
+  ! MODULO          [ reduce using rule 10 (expression -> MINUS expression .) ]
+  ! JUSTINTDIVIDE   [ reduce using rule 10 (expression -> MINUS expression .) ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 21
+
+    (12) expression -> LPAREN expression . RPAREN
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    RPAREN          shift and go to state 32
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    TIMES           shift and go to state 12
+    DIVIDE          shift and go to state 13
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+    JUSTINTDIVIDE   shift and go to state 16
+    ROOT            shift and go to state 17
+
+
+state 22
+
+    (13) expression -> ROOT LPAREN . expression RPAREN
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 33
+
+state 23
+
+    (3) expression -> expression PLUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    PLUS            reduce using rule 3 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 3 (expression -> expression PLUS expression .)
+    ROOT            reduce using rule 3 (expression -> expression PLUS expression .)
+    $end            reduce using rule 3 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 3 (expression -> expression PLUS expression .)
+    TIMES           shift and go to state 12
+    DIVIDE          shift and go to state 13
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+    JUSTINTDIVIDE   shift and go to state 16
+
+  ! TIMES           [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! POWER           [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! MODULO          [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! JUSTINTDIVIDE   [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 24
+
+    (4) expression -> expression MINUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    PLUS            reduce using rule 4 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 4 (expression -> expression MINUS expression .)
+    ROOT            reduce using rule 4 (expression -> expression MINUS expression .)
+    $end            reduce using rule 4 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 4 (expression -> expression MINUS expression .)
+    TIMES           shift and go to state 12
+    DIVIDE          shift and go to state 13
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+    JUSTINTDIVIDE   shift and go to state 16
+
+  ! TIMES           [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! POWER           [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! MODULO          [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! JUSTINTDIVIDE   [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 25
+
+    (5) expression -> expression TIMES expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    PLUS            reduce using rule 5 (expression -> expression TIMES expression .)
+    MINUS           reduce using rule 5 (expression -> expression TIMES expression .)
+    TIMES           reduce using rule 5 (expression -> expression TIMES expression .)
+    DIVIDE          reduce using rule 5 (expression -> expression TIMES expression .)
+    JUSTINTDIVIDE   reduce using rule 5 (expression -> expression TIMES expression .)
+    ROOT            reduce using rule 5 (expression -> expression TIMES expression .)
+    $end            reduce using rule 5 (expression -> expression TIMES expression .)
+    RPAREN          reduce using rule 5 (expression -> expression TIMES expression .)
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+
+  ! POWER           [ reduce using rule 5 (expression -> expression TIMES expression .) ]
+  ! MODULO          [ reduce using rule 5 (expression -> expression TIMES expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! TIMES           [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! JUSTINTDIVIDE   [ shift and go to state 16 ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 26
+
+    (6) expression -> expression DIVIDE expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    PLUS            reduce using rule 6 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 6 (expression -> expression DIVIDE expression .)
+    TIMES           reduce using rule 6 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 6 (expression -> expression DIVIDE expression .)
+    JUSTINTDIVIDE   reduce using rule 6 (expression -> expression DIVIDE expression .)
+    ROOT            reduce using rule 6 (expression -> expression DIVIDE expression .)
+    $end            reduce using rule 6 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 6 (expression -> expression DIVIDE expression .)
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+
+  ! POWER           [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! MODULO          [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! TIMES           [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! JUSTINTDIVIDE   [ shift and go to state 16 ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 27
+
+    (7) expression -> expression POWER expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    PLUS            reduce using rule 7 (expression -> expression POWER expression .)
+    MINUS           reduce using rule 7 (expression -> expression POWER expression .)
+    TIMES           reduce using rule 7 (expression -> expression POWER expression .)
+    DIVIDE          reduce using rule 7 (expression -> expression POWER expression .)
+    MODULO          reduce using rule 7 (expression -> expression POWER expression .)
+    JUSTINTDIVIDE   reduce using rule 7 (expression -> expression POWER expression .)
+    ROOT            reduce using rule 7 (expression -> expression POWER expression .)
+    $end            reduce using rule 7 (expression -> expression POWER expression .)
+    RPAREN          reduce using rule 7 (expression -> expression POWER expression .)
+    POWER           shift and go to state 14
+
+  ! POWER           [ reduce using rule 7 (expression -> expression POWER expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! TIMES           [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! MODULO          [ shift and go to state 15 ]
+  ! JUSTINTDIVIDE   [ shift and go to state 16 ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 28
+
+    (8) expression -> expression MODULO expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    PLUS            reduce using rule 8 (expression -> expression MODULO expression .)
+    MINUS           reduce using rule 8 (expression -> expression MODULO expression .)
+    TIMES           reduce using rule 8 (expression -> expression MODULO expression .)
+    DIVIDE          reduce using rule 8 (expression -> expression MODULO expression .)
+    MODULO          reduce using rule 8 (expression -> expression MODULO expression .)
+    JUSTINTDIVIDE   reduce using rule 8 (expression -> expression MODULO expression .)
+    ROOT            reduce using rule 8 (expression -> expression MODULO expression .)
+    $end            reduce using rule 8 (expression -> expression MODULO expression .)
+    RPAREN          reduce using rule 8 (expression -> expression MODULO expression .)
+    POWER           shift and go to state 14
+
+  ! POWER           [ reduce using rule 8 (expression -> expression MODULO expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! TIMES           [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! MODULO          [ shift and go to state 15 ]
+  ! JUSTINTDIVIDE   [ shift and go to state 16 ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 29
+
+    (9) expression -> expression JUSTINTDIVIDE expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    PLUS            reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .)
+    MINUS           reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .)
+    TIMES           reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .)
+    DIVIDE          reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .)
+    JUSTINTDIVIDE   reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .)
+    ROOT            reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .)
+    $end            reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .)
+    RPAREN          reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .)
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+
+  ! POWER           [ reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .) ]
+  ! MODULO          [ reduce using rule 9 (expression -> expression JUSTINTDIVIDE expression .) ]
+  ! PLUS            [ shift and go to state 10 ]
+  ! MINUS           [ shift and go to state 11 ]
+  ! TIMES           [ shift and go to state 12 ]
+  ! DIVIDE          [ shift and go to state 13 ]
+  ! JUSTINTDIVIDE   [ shift and go to state 16 ]
+  ! ROOT            [ shift and go to state 17 ]
+
+
+state 30
+
+    (14) expression -> expression ROOT LPAREN . expression RPAREN
+    (1) expression -> . NUMBER
+    (2) expression -> . NUMBER DOT NUMBER
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression POWER expression
+    (8) expression -> . expression MODULO expression
+    (9) expression -> . expression JUSTINTDIVIDE expression
+    (10) expression -> . MINUS expression
+    (11) expression -> . PLUS expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . ROOT LPAREN expression RPAREN
+    (14) expression -> . expression ROOT LPAREN expression RPAREN
+    (15) expression -> . PI
+    (16) expression -> . E
+    (17) expression -> . TAU
+
+    NUMBER          shift and go to state 2
+    MINUS           shift and go to state 4
+    PLUS            shift and go to state 3
+    LPAREN          shift and go to state 5
+    ROOT            shift and go to state 6
+    PI              shift and go to state 7
+    E               shift and go to state 8
+    TAU             shift and go to state 9
+
+    expression                     shift and go to state 34
+
+state 31
+
+    (2) expression -> NUMBER DOT NUMBER .
+
+    PLUS            reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    MINUS           reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    TIMES           reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    DIVIDE          reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    POWER           reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    MODULO          reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    JUSTINTDIVIDE   reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    ROOT            reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    $end            reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+    RPAREN          reduce using rule 2 (expression -> NUMBER DOT NUMBER .)
+
+
+state 32
+
+    (12) expression -> LPAREN expression RPAREN .
+
+    PLUS            reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    TIMES           reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    POWER           reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    MODULO          reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    JUSTINTDIVIDE   reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    ROOT            reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+
+
+state 33
+
+    (13) expression -> ROOT LPAREN expression . RPAREN
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    RPAREN          shift and go to state 35
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    TIMES           shift and go to state 12
+    DIVIDE          shift and go to state 13
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+    JUSTINTDIVIDE   shift and go to state 16
+    ROOT            shift and go to state 17
+
+
+state 34
+
+    (14) expression -> expression ROOT LPAREN expression . RPAREN
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . POWER expression
+    (8) expression -> expression . MODULO expression
+    (9) expression -> expression . JUSTINTDIVIDE expression
+    (14) expression -> expression . ROOT LPAREN expression RPAREN
+
+    RPAREN          shift and go to state 36
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    TIMES           shift and go to state 12
+    DIVIDE          shift and go to state 13
+    POWER           shift and go to state 14
+    MODULO          shift and go to state 15
+    JUSTINTDIVIDE   shift and go to state 16
+    ROOT            shift and go to state 17
+
+
+state 35
+
+    (13) expression -> ROOT LPAREN expression RPAREN .
+
+    PLUS            reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    MINUS           reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    TIMES           reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    POWER           reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    MODULO          reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    JUSTINTDIVIDE   reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    ROOT            reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    $end            reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 13 (expression -> ROOT LPAREN expression RPAREN .)
+
+
+state 36
+
+    (14) expression -> expression ROOT LPAREN expression RPAREN .
+
+    PLUS            reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    MINUS           reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    TIMES           reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    POWER           reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    MODULO          reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    JUSTINTDIVIDE   reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    ROOT            reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    $end            reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 14 (expression -> expression ROOT LPAREN expression RPAREN .)
+
